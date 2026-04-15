@@ -11,13 +11,11 @@ body {
   font-family: Arial;
   color: white;
   text-align: center;
-  overflow: hidden;
   background: linear-gradient(270deg, #0f0c29, #302b63, #24243e);
   background-size: 600% 600%;
-  animation: bgMove 10s ease infinite;
+  animation: bgMove 12s ease infinite;
 }
 
-/* حركة الخلفية */
 @keyframes bgMove {
   0% {background-position: 0% 50%;}
   50% {background-position: 100% 50%;}
@@ -30,9 +28,9 @@ body {
   width: 100%;
   height: 100%;
   background: radial-gradient(white 1px, transparent 1px);
-  background-size: 50px 50px;
-  animation: moveStars 40s linear infinite;
-  opacity: 0.2;
+  background-size: 40px 40px;
+  animation: moveStars 60s linear infinite;
+  opacity: 0.15;
 }
 
 @keyframes moveStars {
@@ -42,68 +40,66 @@ body {
 
 /* محتوى */
 .container {
-  margin-top: 120px;
-  animation: fadeIn 2s ease;
-}
-
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(30px);}
-  to {opacity: 1; transform: translateY(0);}
+  margin-top: 80px;
 }
 
 h1 {
   font-size: 50px;
   color: #bb86fc;
-  text-shadow: 0 0 20px #bb86fc, 0 0 40px #7a00ff;
-}
-
-p {
-  font-size: 18px;
-  color: #ddd;
+  text-shadow: 0 0 25px #bb86fc;
 }
 
 /* أزرار */
 .btn {
   display: inline-block;
-  margin: 15px;
-  padding: 15px 35px;
-  border-radius: 15px;
-  font-size: 18px;
+  margin: 10px;
+  padding: 12px 25px;
+  border-radius: 12px;
   text-decoration: none;
+  font-size: 16px;
   transition: 0.3s;
 }
 
-/* واتساب */
 .whatsapp {
-  background: linear-gradient(135deg, #25D366, #128C7E);
+  background: #25D366;
 }
 
-/* تلغرام */
 .telegram {
-  background: linear-gradient(135deg, #0088cc, #00c6ff);
+  background: #0088cc;
 }
 
-/* تأثير hover */
+.tiktok {
+  background: #ff0050;
+}
+
 .btn:hover {
-  transform: scale(1.12);
-  box-shadow: 0 0 30px white;
+  transform: scale(1.1);
 }
 
-/* تأثير خطوط نيون */
-.glow-line {
-  width: 200px;
-  height: 3px;
+/* الحسابات */
+.accounts {
+  margin-top: 50px;
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
   margin: 20px auto;
-  background: linear-gradient(90deg, transparent, #bb86fc, transparent);
-  animation: glowMove 3s infinite;
+  padding: 20px;
+  width: 300px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(128,0,255,0.3);
 }
 
-@keyframes glowMove {
-  0% {opacity: 0;}
-  50% {opacity: 1;}
-  100% {opacity: 0;}
+.card a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #0088cc;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
 }
-
 </style>
 </head>
 
@@ -113,16 +109,31 @@ p {
 
 <div class="container">
   <h1>🔥 Realm Store 🔥</h1>
-  <div class="glow-line"></div>
-  <p>أفضل متجر حسابات Blox Fruits و Bounty Rush</p>
+  <p>بيع حسابات Blox Fruits و Bounty Rush</p>
 
-  <a href="https://wa.me/966562585336" target="_blank" class="btn whatsapp">
-    💬 واتساب
-  </a>
+  <!-- الأزرار -->
+  <a href="https://wa.me/966562585336" target="_blank" class="btn whatsapp">💬 واتساب</a>
+  <a href="https://t.me/+CEsvry-8hAgxNWRk" target="_blank" class="btn telegram">🚀 تلغرام</a>
+  <a href="https://tiktok.com/@realm_33" target="_blank" class="btn tiktok">🎵 تيك توك</a>
 
-  <a href="https://t.me/+CEsvry-8hAgxNWRk" target="_blank" class="btn telegram">
-    🚀 تلغرام
-  </a>
+  <!-- الحسابات -->
+  <div class="accounts">
+    <h2>🔥 الحسابات المتوفرة</h2>
+
+    <div class="card">
+      <h3>حساب Blox Fruits</h3>
+      <p>لفل عالي + فواكه نادرة</p>
+      <a href="https://t.me/+CEsvry-8hAgxNWRk" target="_blank">📲 اطلب من التلغرام</a>
+    </div>
+
+    <div class="card">
+      <h3>حساب Bounty Rush</h3>
+      <p>شخصيات قوية + حساب جاهز</p>
+      <a href="https://t.me/+CEsvry-8hAgxNWRk" target="_blank">📲 اطلب من التلغرام</a>
+    </div>
+
+  </div>
+
 </div>
 
 </body>
