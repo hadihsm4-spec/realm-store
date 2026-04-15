@@ -7,125 +7,123 @@
 
 <style>
 body {
-    margin: 0;
-    font-family: Arial;
-    background: linear-gradient(135deg, #0d0d0d, #1a0033);
-    color: white;
-    text-align: center;
-    overflow-x: hidden;
+  margin: 0;
+  font-family: Arial;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  background: linear-gradient(270deg, #0f0c29, #302b63, #24243e);
+  background-size: 600% 600%;
+  animation: bgMove 10s ease infinite;
 }
 
-/* تأثير خلفية متحركة */
-body::before {
-    content: "";
-    position: fixed;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(123,44,255,0.2), transparent);
-    animation: move 10s linear infinite;
-    z-index: -1;
+/* حركة الخلفية */
+@keyframes bgMove {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
 }
 
-@keyframes move {
-    0% { transform: translate(0,0); }
-    50% { transform: translate(-25%, -25%); }
-    100% { transform: translate(0,0); }
+/* نجوم */
+.stars {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(white 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: moveStars 40s linear infinite;
+  opacity: 0.2;
 }
 
-header {
-    padding: 60px 20px;
+@keyframes moveStars {
+  from {background-position: 0 0;}
+  to {background-position: 1000px 1000px;}
 }
 
-h1 {
-    font-size: 40px;
-    color: #bb86fc;
-}
-
-p {
-    font-size: 18px;
-    color: #ccc;
-}
-
-/* زر واتساب */
-.whatsapp-btn {
-    margin-top: 30px;
-    padding: 15px 30px;
-    font-size: 18px;
-    background: #25D366;
-    color: white;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.whatsapp-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 20px #25D366;
-}
-
-/* كارد معلومات */
-.card {
-    background: rgba(255,255,255,0.05);
-    margin: 30px auto;
-    padding: 20px;
-    border-radius: 20px;
-    width: 80%;
-    max-width: 400px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 20px rgba(128,0,255,0.3);
-}
-
-/* تأثير ظهور */
-.fade {
-    animation: fadeIn 2s ease;
+/* محتوى */
+.container {
+  margin-top: 120px;
+  animation: fadeIn 2s ease;
 }
 
 @keyframes fadeIn {
-    from {opacity: 0; transform: translateY(20px);}
-    to {opacity: 1; transform: translateY(0);}
+  from {opacity: 0; transform: translateY(30px);}
+  to {opacity: 1; transform: translateY(0);}
 }
 
-footer {
-    margin-top: 50px;
-    padding: 20px;
-    color: #888;
+h1 {
+  font-size: 50px;
+  color: #bb86fc;
+  text-shadow: 0 0 20px #bb86fc, 0 0 40px #7a00ff;
 }
+
+p {
+  font-size: 18px;
+  color: #ddd;
+}
+
+/* أزرار */
+.btn {
+  display: inline-block;
+  margin: 15px;
+  padding: 15px 35px;
+  border-radius: 15px;
+  font-size: 18px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+/* واتساب */
+.whatsapp {
+  background: linear-gradient(135deg, #25D366, #128C7E);
+}
+
+/* تلغرام */
+.telegram {
+  background: linear-gradient(135deg, #0088cc, #00c6ff);
+}
+
+/* تأثير hover */
+.btn:hover {
+  transform: scale(1.12);
+  box-shadow: 0 0 30px white;
+}
+
+/* تأثير خطوط نيون */
+.glow-line {
+  width: 200px;
+  height: 3px;
+  margin: 20px auto;
+  background: linear-gradient(90deg, transparent, #bb86fc, transparent);
+  animation: glowMove 3s infinite;
+}
+
+@keyframes glowMove {
+  0% {opacity: 0;}
+  50% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
 </style>
 </head>
 
 <body>
 
-<header class="fade">
-<h1>🎮 Realm Store</h1>
-<p>أفضل متجر حسابات Blox Fruits و Bounty Rush</p>
+<div class="stars"></div>
 
-<button class="whatsapp-btn" onclick="contact()">
-📲 تواصل واتساب
-</button>
-</header>
+<div class="container">
+  <h1>🔥 Realm Store 🔥</h1>
+  <div class="glow-line"></div>
+  <p>أفضل متجر حسابات Blox Fruits و Bounty Rush</p>
 
-<div class="card fade">
-<h2>🔥 خدماتنا</h2>
-<p>بيع حسابات مميزة<br>تسليم فوري بعد الدفع<br>دعم سريع</p>
+  <a href="https://wa.me/966562585336" target="_blank" class="btn whatsapp">
+    💬 واتساب
+  </a>
+
+  <a href="https://t.me/+CEsvry-8hAgxNWRk" target="_blank" class="btn telegram">
+    🚀 تلغرام
+  </a>
 </div>
-
-<div class="card fade">
-<h2>⚠️ ملاحظات</h2>
-<p>لا يوجد استرجاع بعد التسليم<br>تأكد قبل الشراء</p>
-</div>
-
-<footer>
-© Realm Store
-</footer>
-
-<script>
-function contact() {
-    let msg = "السلام عليكم ابغى اشتري من Realm";
-    let url = "https://wa.me/966562585336?text=" + encodeURIComponent(msg);
-    window.open(url, "_blank");
-}
-</script>
 
 </body>
 </html>
