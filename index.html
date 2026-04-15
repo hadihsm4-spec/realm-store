@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Realm Store</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(135deg, #0d0d0d, #1a0033);
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* تأثير خلفية متحركة */
+body::before {
+    content: "";
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(123,44,255,0.2), transparent);
+    animation: move 10s linear infinite;
+    z-index: -1;
+}
+
+@keyframes move {
+    0% { transform: translate(0,0); }
+    50% { transform: translate(-25%, -25%); }
+    100% { transform: translate(0,0); }
+}
+
+header {
+    padding: 60px 20px;
+}
+
+h1 {
+    font-size: 40px;
+    color: #bb86fc;
+}
+
+p {
+    font-size: 18px;
+    color: #ccc;
+}
+
+/* زر واتساب */
+.whatsapp-btn {
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 18px;
+    background: #25D366;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #25D366;
+}
+
+/* كارد معلومات */
+.card {
+    background: rgba(255,255,255,0.05);
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 400px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(128,0,255,0.3);
+}
+
+/* تأثير ظهور */
+.fade {
+    animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    color: #888;
+}
+</style>
+</head>
+
+<body>
+
+<header class="fade">
+<h1>🎮 Realm Store</h1>
+<p>أفضل متجر حسابات Blox Fruits و Bounty Rush</p>
+
+<button class="whatsapp-btn" onclick="contact()">
+📲 تواصل واتساب
+</button>
+</header>
+
+<div class="card fade">
+<h2>🔥 خدماتنا</h2>
+<p>بيع حسابات مميزة<br>تسليم فوري بعد الدفع<br>دعم سريع</p>
+</div>
+
+<div class="card fade">
+<h2>⚠️ ملاحظات</h2>
+<p>لا يوجد استرجاع بعد التسليم<br>تأكد قبل الشراء</p>
+</div>
+
+<footer>
+© Realm Store
+</footer>
+
+<script>
+function contact() {
+    let msg = "السلام عليكم ابغى اشتري من Realm";
+    let url = "https://wa.me/966562585336?text=" + encodeURIComponent(msg);
+    window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
